@@ -849,7 +849,7 @@ with gr.Blocks(title="RVC WebUI") as app:
                                 label=i18n(
                                     "保护清辅音和呼吸声，防止电音撕裂等artifact，拉满0.5不开启，调低加大保护力度但可能降低索引效果"
                                 ),
-                                value=0.33,
+                                value=0,
                                 step=0.01,
                                 interactive=True,
                             )
@@ -867,7 +867,7 @@ with gr.Blocks(title="RVC WebUI") as app:
                                 minimum=0,
                                 maximum=1,
                                 label=i18n("检索特征占比"),
-                                value=0.75,
+                                value=0.01,
                                 interactive=True,
                             )
                             f0_file = gr.File(
@@ -984,7 +984,7 @@ with gr.Blocks(title="RVC WebUI") as app:
                             label=i18n(
                                 "保护清辅音和呼吸声，防止电音撕裂等artifact，拉满0.5不开启，调低加大保护力度但可能降低索引效果"
                             ),
-                            value=0.33,
+                            value=0,
                             step=0.01,
                             interactive=True,
                         )
@@ -1000,7 +1000,7 @@ with gr.Blocks(title="RVC WebUI") as app:
                             minimum=0,
                             maximum=1,
                             label=i18n("检索特征占比"),
-                            value=1,
+                            value=0.01,
                             interactive=True,
                         )
                 with gr.Row():
@@ -1216,15 +1216,15 @@ with gr.Blocks(title="RVC WebUI") as app:
                 with gr.Row():
                     save_epoch10 = gr.Slider(
                         minimum=1,
-                        maximum=50,
+                        maximum=100,
                         step=1,
                         label=i18n("保存频率save_every_epoch"),
-                        value=5,
+                        value=10,
                         interactive=True,
                     )
                     total_epoch11 = gr.Slider(
                         minimum=2,
-                        maximum=1000,
+                        maximum=10000,
                         step=1,
                         label=i18n("总训练轮数total_epoch"),
                         value=20,
